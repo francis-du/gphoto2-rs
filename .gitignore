@@ -2,3 +2,4 @@
 /Cargo.lock
 *.snap.new
 /.helix
+.idea

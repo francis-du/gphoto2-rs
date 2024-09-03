@@ -25,7 +25,7 @@ fn main() {
     .clang_args(lib.include_paths.iter().map(|path| format!("-I{}", path.to_str().unwrap())))
     .header("src/wrapper.h")
     .generate_comments(true)
-    .parse_callbacks(Box::new(bindgen::CargoCallbacks))
+    .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
     .default_enum_style(bindgen::EnumVariation::Rust { non_exhaustive: false })
     .bitfield_enum("CameraFilePermissions")
     .bitfield_enum("CameraFileStatus")
